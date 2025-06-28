@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ...existing code... -->
+    <style>
+        /* ...existing styles... */
+        .heart-rain {
+            position: fixed;
+            top: -40px;
+            font-size: 2rem;
+            pointer-events: none;
+            z-index: 9999;
+            animation: heart-fall 3s linear forwards;
+        }
+        @keyframes heart-fall {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0.7; }
+        }
+    </style>
+</head>
+<body class="min-h-screen overflow-x-hidden bg-gradient-to-br from-pink-200 via-rose-100 to-red-200"
+      style="background-image: radial-gradient(circle at 20% 20%, #fff0f6 0%, #fbc2eb 40%, #f9a8d4 70%, #f87171 100%), url('https://png.pngtree.com/thumb_back/fw800/background/20230527/pngtree-valentine-s-day-background-with-hearts-and-light-effects-image_2717277.jpg'); background-size: cover, cover; background-repeat: no-repeat, no-repeat;">
+<!-- ...existing code... -->
+<!-- ...existing code... -->
+<!-- ...existing code... -->
+
+<script>
+    // ...existing scripts...
+
+    // Heart Barish (Rain) Effect
+    function createHeartRain() {
+        const heart = document.createElement('div');
+        heart.className = 'heart-rain';
+        heart.innerHTML = '❤️';
+        heart.style.left = Math.random() * window.innerWidth + 'px';
+        heart.style.fontSize = (Math.random() * 24 + 24) + 'px';
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 3000);
+    }
+
+    setInterval(createHeartRain, 200); // Adjust speed by changing interval
+
+    // ...existing scripts...
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakshabandhan | Sister-Brother Bond</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Floating hearts animation */
+        .heart {
+            position: fixed;
+            pointer-events: none;
+            animation: float-up 4s ease-in forwards;
+            font-size: 20px;
+            color: #e11d48;
+            opacity: 0.8;
+        }
+        @keyframes float-up {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        :root {
+            --primary: #e11d48;
+            --secondary: #f9a8d4;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff9fb;
+        }
+        .hero-heading {
+            font-family: 'Dancing Script', cursive;
+        }
+        .elder-sister-heading {
+            font-family: 'Playfair Display', serif;
+        }
+        .rakhi {
+            animation: float 3s ease-in-out infinite;
+        }
+        .shadow {
+            animation: shadow 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        @keyframes shadow {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(0.95); opacity: 0.6; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+      
+    </style>
+</head>
+<body class="min-h-screen overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md py-4 px-6 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/216b58a9-60a5-4273-9651-20c479f3bf08.png" alt="Icon of a golden rakhi with intricate designs on red silk" class="w-10 h-10 rounded-full" />
+                <span class="text-xl font-bold text-rose-600 hidden sm:block">Riya Didi ❤</span>
+            </div>
+            <div class="flex items-center space-x-6">
+               <!-- Place this inside your navigation bar, where you want the toggle button to appear -->
+<button id="darkModeToggle" class="text-gray-700 hover:text-rose-600 transition flex items-center space-x-2">
+    <span id="darkModeIcon">
+        <!-- Moon icon for dark mode -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+    </span>
+    <span id="lightModeIcon" style="display:none;">
+        <!-- Sun icon for light mode -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+    </span>
+</button>
+
+<!-- Place this script at the end of your body (after all HTML) -->
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const darkModeIcon = document.getElementById('darkModeIcon');
+    const lightModeIcon = document.getElementById('lightModeIcon');
+
+    function updateModeIcon() {
+        if (document.documentElement.classList.contains('dark')) {
+            darkModeIcon.style.display = 'none';
+            lightModeIcon.style.display = 'inline';
+        } else {
+            darkModeIcon.style.display = 'inline';
+            lightModeIcon.style.display = 'none';
+        }
+    }
+
+    darkModeToggle.addEventListener('click', function() {
+        document.documentElement.classList.toggle('dark');
+        // Save preference to localStorage
+        if (document.documentElement.classList.contains('dark')) {
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+        }
+        updateModeIcon();
+    });
+
+    // On page load, set mode and icon
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.documentElement.classList.add('dark');
+    }
+    updateModeIcon();
+</script>
+                <a href="#home" class="text-rose-600 hover:text-rose-800 transition">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-rose-600 transition">Our Story</a>
+                <a href="#gallery" class="text-gray-700 hover:text-rose-600 transition">Memories</a>
+                <a href="#wishes" class="text-gray-700 hover:text-rose-600 transition">Wishes</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-16 px-6 md:py-24">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-800 hero-heading">Happy Rakshabandhan <span class="text-rose-600">Maasididi❤</span></h1>
+                <p class="text-lg text-gray-600 mb-8">A sister is both your mirror and your opposite - here's to the beautiful relationship we share! Love from your little brother.</p>
+                <div class="space-y-4">
+                    <div>
+                        <p class="text-sm text-gray-500">(Nishant Dhiman/Riya Didi ❤) </p>
+                        
+                    </div>
+                    <div class="mt-8 flex flex-col items-center">
+  <a href="https://youtu.be/Y_vDIZAGOXQ?si=yWG81n683IIqC69w" target="_blank" class="inline-flex items-center gap-3 bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg transition">
+    <i class="fab fa-youtube text-2xl"></i>
+     This vedio for my maasididi❤
+  </a>
+  <!-- Replace your current music player button and add this code inside the "Our Special Song" section -->
+<div class="flex flex-col items-center gap-4 my-8">
+    <!-- Play MyDi Song Button -->
+    <button id="play-btn-mydi" class="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-8 py-4 rounded-full font-medium hover:opacity-90 transition duration-300 shadow-lg flex items-center">
+        <i class="fas fa-play mr-3"></i> This Song for my maasididi❤
+    </button>
+    <audio id="audio-mydi">
+        <source src="mydi.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Play MyDidi Song Button -->
+    <button id="play-btn-mydidi" class="bg-gradient-to-r from-yellow-400 to-pink-500 text-white px-8 py-4 rounded-full font-medium hover:opacity-90 transition duration-300 shadow-lg flex items-center">
+        <i class="fas fa-play mr-3"></i> This Song for My maasididi❤
+    </button>
+    <audio id="audio-mydidi">
+        <source src="mydidi.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+<script>
+    // MyDi Song
+    const playBtnMyDi = document.getElementById('play-btn-mydi');
+    const audioMyDi = document.getElementById('audio-mydi');
+    playBtnMyDi.addEventListener('click', function() {
+        if (audioMyDi.paused) {
+            audioMyDi.play();
+            playBtnMyDi.innerHTML = '<i class="fas fa-pause mr-3"></i> Pause Song MyDi';
+        } else {
+            audioMyDi.pause();
+            playBtnMyDi.innerHTML = '<i class="fas fa-play mr-3"></i> Play Song MyDi';
+        }
+    });
+
+    // MyDidi Song
+    const playBtnMyDidi = document.getElementById('play-btn-mydidi');
+    const audioMyDidi = document.getElementById('audio-mydidi');
+    playBtnMyDidi.addEventListener('click', function() {
+        if (audioMyDidi.paused) {
+            audioMyDidi.play();
+            playBtnMyDidi.innerHTML = '<i class="fas fa-pause mr-3"></i> Pause Song MyDidi';
+        } else {
+            audioMyDidi.pause();
+            playBtnMyDidi.innerHTML = '<i class="fas fa-play mr-3"></i> Play Song MyDidi';
+        }
+    });
+</script><!-- Song Button for My Didi -->
+
+</div>
+                </div>
+            </div>
+            <div class="relative flex justify-center">
+              <img src="DIDI.jpg" alt="Didi Photo" class="w-72 h-72 rounded-full border-4 border-rose-300 shadow-lg object-cover"/>
+    <div class="gallery-overlay">
+                <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-rose-200 opacity-40 rounded-full shadow-lg"></div>
+                <div class="absolute -top-4 -right-4 w-16 h-16 bg-amber-200 opacity-40 rounded-full shadow-lg"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-6 bg-gradient-to-br from-rose-50 to-amber-50">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4 text-gray-800 elder-sister-heading">To My <span class="text-rose-600">Beloved Maasididi🫂 </span></h2>
+            <div class="w-24 h-1 bg-rose-400 mx-auto mb-10"></div>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="text-left space-y-4">
+                    <p class="text-gray-700">For my mother/sister Sister,you are  the most beautiful gift of my life. you are not only my sister you are my mother  also my friend and my constant companion when no one understood ,you understood everything i said without saying anything.</p>
+                    <p class="text-gray-700">There is motherly love in your affection and there is closeness hidden even in your scolding.love you didi thankyou for always being there thanks for coming in to my life and making it wonderful thankyou for treating me like real brother or son. you love support care and understanding means a lot to me. you are very precious to me.</p>
+                    <p class="text-gray-700">Maasisdi I want you to know how much you mean to me you are not just my sister, my mother, my good friend, my biggest supporter. Thus sacred tvread symbolizes my love fir you maasididi and my promise to always protect you and I promise you Didi, I will never hurt you. I want to see you happy for life. And Didi, please forgive me. I am your brother and son maasididi. Please forgive your son, Didi. </p>
+                    <p class="text-gray-700">You are not my didi, you are the guardians angel who has watched over me with unconditional love your presence in my life has been a blessing that words cannot fully express on the special day of rakshabandhan, i want you to know that you hold a very special place in my heart and inam grateful for every moments of love care and guidance you have given me.</p>
+                </div>
+                <div class="relative">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e8284c33-7f0f-4b1b-90b3-7cf3d8c1f6de.png" alt="Black and white childhood photo of siblings, elder sister holding younger brother's hand in a park" class="w-full rounded-lg shadow-lg border-4 border-white" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Didi Moments Section -->
+    <section class="py-16 px-6 bg-gradient-to-r from-rose-100 to-pink-100">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center text-gray-800">Special <span class="text-rose-600">Thanks</span></h2>
+            <div class="w-24 h-1 bg-rose-400 mx-auto mb Pambs10"></div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                    <div class="text-rose-600 text-4xl mb-4">🫶</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Thanks</h3>
+                    <p class="text-gray-600">I m very lucky that you have come my life i feel that we have a relationalshipfrom my fast life</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                    <div class="text-rose-600 text-4xl mb-4">🫶</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Helper</h3>
+                    <p class="text-gray-600">You helping me any time</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                    <div class="text-rose-600 text-4xl mb-4">🫶</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Thanks</h3>
+                    <p class="text-gray-600">Your brother/son (Nishant)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memory Timeline -->
+    <section class="py-16 px-6 bg-rose-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center text-gray-800">A promise and Pray <span class="text-rose-600">for Maasididi❤</span></h2>
+            <div class="w-24 h-1 bg-rose-400 mx-auto mb-10"></div>
+            
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="border-l-2 border-rose-300 absolute h-full left-1/2 transform -translate-x-1/2"></div>
+                
+                <!-- Timeline items -->
+                <div class="space-y-8">
+                    <!-- Item 1 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-8 md:text-right">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <h3 class="text-xl font-bold text-rose-600">Promise</h3>
+                                <p class="text-gray-600"> My promise to always protect you didi and  i promise you didi,i will never hurt you.</p>
+                                <p class="text-gray-700 mt-2">I promise you Didi,i will be your best brother/son.</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:block w-10 h-10 rounded-full bg-rose-500 absolute left-1/2 transform -translate-x-1/2 border-4 border-white shadow-md"></div>
+                        <div class="md:w-1/2 md:pl-8 mt-6 md:mt-0">
+                            <img src="promise.jpg" alt="Promise Photo" class="w-60 h-55 rounded-xl shadow-lg border-4 border-rose-200 object-cover" />
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 order-2 md:order-1 md:pl-8">
+                            <img src="prayer.jpg" alt="Pray Photo" class="w-60 h-50 rounded-xl shadow-lg border-4 border-rose-200 object-cover" />
+                        </div>
+                        <div class="hidden md:block w-10 h-10 rounded-full bg-rose-500 absolute left-1/2 transform -translate-x-1/2 border-4 border-white shadow-md"></div>
+                        <div class="md:w-1/2 order-1 md:order-2 md:pr-8 md:text-right mt-6 md:mt-0">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <h3 class="text-xl font-bold text-rose-600">Supplication and Wish</h3>
+                                <p class="text-gray-600">Didi i pray to god that you always keep smiling and remain happy.</p>
+                                <p class="text-gray-700 mt-2">There should never be tears in your eyes you always remain happy thoughout you life.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section - Our Special Moments -->
+       <section class="diagonal-section bg-gray-50">
+        <div class="container mx-auto px-4 py-20">
+            <div class="text-center mb-16">
+                <h2 class="script-font text-4xl md:text-5xl text-pink-600 mb-4">Appreciate Memories With My Maasididi❤</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Moments captured beautiful bond (NISHANT/RIYADIDI❤)</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-item h-64 rounded-xl overflow-hidden" onclick="openModal('https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
+                    <img src="didi15.jpg" alt="Didi Photo" class="w-full h-full object-cover">
+    <div class="gallery-overlay">
+        <p class="text-white font-medium">My Lovely Didi</p>
+    </div>
+</div>
+                <div class="gallery-item h-64 rounded-xl overflow-hidden" onclick="openModal('didi1.jpg')">
+    <img src="didi1.jpg" alt="Didi 1 Photo" class="w-full h-full object-cover">
+    <div class="gallery-overlay">
+        <p class="text-white font-medium">Didi Special Moment</p>
+    </div>
+</div>
+               <div class="gallery-item h-64 rounded-xl overflow-hidden" onclick="openModal('didi2.jpg')">
+    <img src="didi2.jpg" alt="Didi 2 Photo" class="w-full h-full object-cover">
+    <div class="gallery-overlay">
+        <p class="text-white font-medium">Didi Cherished Memory</p>
+    </div>
+</div>
+            <div class="gallery-item h-64 rounded-xl overflow-hidden" onclick="openModal('didi3.jpg')">
+    <img src="didi3.jpg" alt="Didi 3 Photo" class="w-full h-full object-cover">
+    <div class="gallery-overlay">
+        <p class="text-white font-medium">Didi Beautiful Smile</p>
+    </div>
+</div>
+ <div class="gallery-item h-64 rounded-xl overflow-hidden" onclick="openModal('didi14.jpg')">
+    <img src="bh1.jpg" alt="Didi 14 Photo" class="w-full h-full object-cover">
+    <div class="gallery-overlay">
+        <p class="text-white font-medium">Didi Special Memory</p>
+    </div>
+</div>
+                                        <div class="gallery-item h-64 rounded-xl overflow-hidden" onclick="openModal('didi15.jpg')">
+    <img src="didi14.jpg" alt="Didi 15 Photo" class="w-full h-full object-cover">
+    <div class="gallery-overlay">
+        <p class="text-white font-medium">Didi Beautiful Moment</p>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wishes Section -->
+    <section id="wishes" class="py-16 px-6 bg-rose-50">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4 text-gray-800">Rakhi <span class="text-rose-600">Wishes</span></h2>
+            <div class="w-24 h-1 bg-rose-400 mx-auto mb-10"></div>
+            <div class="bg-white rounded-xl p-8 shadow-lg mb-8">
+                <div class="relative">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b1787f11-6c51-4aca-99fe-a87839880f15.png" alt="Ornate decorative divider with traditional Indian motifs in red and gold colors" class="mx-auto w-24 opacity-60 mb-6" />
+                    <p class="text-gray-700 italic text-lg mb-6">
+                        "Dear didi, no matter how tall I grow, I'll always look up to you. Thank you for being my personal superhero. May our bond grow stronger with each Rakhi. Love you loads!"
+                    </p>
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/31c4159d-e22c-4f56-bbd9-7da298fe4729.png" alt="Ornate decorative divider with traditional Indian motifs in red and gold colors" class="mx-auto w-24 opacity-60 rotate-180" />
+                </div>
+            </div>
+            <form class="space-y-4 max-w-lg mx-auto border-2 border-rose-200 rounded-xl p-6">
+                <h3 class="text-xl font-bold text-rose-600 text-center mb-4">Send A Special Message To Riya Didi ❤</h3>
+                <div class="flex items-center justify-center mb-4">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/28739c84-9bcf-4856-abe8-cd408121f45c.png" alt="love letter icon" class="w-12 h-12">
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg border border-rose-200 focus:outline-none focus:ring-2 focus:ring-rose-300" />
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-lg border border-rose-200 focus:outline-none focus:ring-2 focus:ring-rose-300" />
+                    </div>
+                </div>
+                <div>
+                    <textarea placeholder="Write your Rakhi wish..." class="w-full px-4 py-3 rounded-lg border border-rose-200 focus:outline-none focus:ring-2 focus:ring-rose-300 h-32"></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="bg-rose-600 hover:bg-rose-700 text-white px-8 py-3 rounded-full shadow-lg transition transform hover:scale-105">
+                        Send Wish & Gift
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    
+
+    <!-- Music Section -->
+<!-- Add this where you want the Gift Button to appear, for example after the "Your Rakhi Gift" section or anywhere suitable -->
+<div class="flex justify-center my-8">
+    <button id="giftBtn" class="bg-gradient-to-r from-rose-500 to-amber-400 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:scale-105 transition transform flex items-center space-x-3">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2v-7m16 0V7a2 2 0 00-2-2h-3.5a2.5 2.5 0 01-5 0H6a2 2 0 00-2 2v5m16 0H4" />
+        </svg>
+        Open Surprise Gift
+    </button>
+</div>
+
+<!-- Surprise Gift Modal -->
+<!-- Surprise Gift Modal with Image and Music -->
+<div id="giftModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4 text-center shadow-2xl relative">
+        <button id="closeGiftModal" class="absolute top-3 right-3 text-gray-400 hover:text-rose-600 text-2xl font-bold">&times;</button>
+        <h3 class="text-2xl font-bold text-rose-600 mb-4">Surprise Gift 🎁</h3>
+        <img src="ma2.jpg" alt="Gift Image" class="w-40 h-40 rounded-xl shadow-lg border-4 border-rose-200 object-cover mx-auto mb-4" />
+        <audio id="giftMusic" src="ma1.mp3"></audio>
+        <p class="text-lg text-gray-700 mb-4">
+            Congratulations! You have unlocked a special surprise gift from your brother.<br><br>
+            <span class="text-rose-500 font-bold">Happy Rakshabandhan Maasididi❤>
+        </p>
+        <button id="closeGiftBtn" class="mt-4 bg-rose-600 hover:bg-rose-700 text-white px-6 py-2 rounded-full font-semibold shadow transition">Close</button>
+    </div>
+</div>
+
+<script>
+    // Gift Button Modal Logic
+    const giftBtn = document.getElementById('giftBtn');
+    const giftModal = document.getElementById('giftModal');
+    const closeGiftBtn = document.getElementById('closeGiftBtn');
+    const closeGiftModal = document.getElementById('closeGiftModal');
+    const giftMusic = document.getElementById('giftMusic');
+
+    giftBtn.addEventListener('click', function() {
+        giftModal.classList.remove('hidden');
+        giftMusic.currentTime = 0;
+        giftMusic.play();
+    });
+
+    function closeGift() {
+        giftModal.classList.add('hidden');
+        giftMusic.pause();
+        giftMusic.currentTime = 0;
+    }
+
+    closeGiftBtn.addEventListener('click', closeGift);
+    closeGiftModal.addEventListener('click', closeGift);
+
+    window.addEventListener('click', function(event) {
+        if (event.target === giftModal) {
+            closeGift();
+        }
+    });
+</script>
+
+    <!-- Gift Section -->
+   
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-rose-400">Rakshabandhan</h3>
+                    <p class="text-gray-400 text-sm">Celebrating the eternal bond between siblings since childhood</p>
+                </div>
+                <div>
+                    <h4 class="text-md font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-rose-400 transition">Home</a></li>
+                        <li><a href="#" class="hover:text-rose-400 transition">Our Story</a></li>
+                        <li><a href="#" class="hover:text-rose-400 transition">Photo Gallery</a></li>
+                        <li><a href="#" class="hover:text-rose-400 transition">Send Wishes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-md font-bold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+    
+    <a href="https://www.instagram.com/nishant_d3011?igsh=MXR3cjUweXBlOGF4dQ==" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-rose-600 transition">
+        <!-- Instagram SVG -->
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5zm5.25.75a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+        </svg>
+    </a>
+    <a href="mailto:nishantdhiman526@gmail.com" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-rose-600 transition">
+    <!-- Gmail SVG -->
+    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 20v-9.99l7.29 6.36a1 1 0 0 0 1.42 0L20 10.01V20H4z"/>
+    </svg>
+</a>>
+                 </div>
+
+
+         </div>
+  
+</div>
+             </div>
+
+                    
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-sm text-gray-400 text-center">
+                <p>Made with love by your little brother Nishant Dhiman from Riya Didi ❤</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/9720739563" target="_blank" class="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all transform hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.884 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+        </a>
+    </div>
+
+    <script>
+        // Floating hearts animation
+        document.addEventListener('mousemove', function(e) {
+            if(Math.random() > 0.98) { // Random chance to create heart
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '❤️';
+                heart.style.left = e.pageX + 'px';
+                heart.style.top = e.pageY + 'px';
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 4000);
+            }
+        });
+
+        
+        
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Your Rakhi wish has been sent successfully! Didi will be so happy!');
+            this.reset();
+        });
+    // Music player functionality
+        const playBtn = document.querySelector('.bg-rose-600.hover\\:bg-rose-700');
+        let isPlaying = false;
+        
+        playBtn.addEventListener('click', function() {
+            isPlaying = !isPlaying;
+            const icon = this.querySelector('svg');
+            if (isPlaying) {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />';
+                // Here you would add actual audio play functionality
+            } else {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />';
+                // Here you would add audio pause functionality
+            }
+        });     
+
